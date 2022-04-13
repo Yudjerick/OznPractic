@@ -1,4 +1,4 @@
-import Car
+from Car import Car
 
 class PassengerCar(Car):
     def __init__(self, mark, voltage, year, passeners):
@@ -11,4 +11,3 @@ class PassengerCar(Car):
 
     def get_changeyear(self, detail):
         return self.repair_book[detail]
-    
