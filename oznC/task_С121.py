@@ -71,6 +71,24 @@ class Truck(Car):
         for i in sorted(self.goods, key = self.goods.get, reverse = True):
             print(i, " ", self.goods[i])
 
+class Autopark:
+    def __init__(self, name):
+        self.name = name
+        self.passengerCars = []
+        self.trucks = []
+    def __str__(self):
+        s1 = ""
+        for i in self.passengerCars:
+            s1 += str(i) + "\n"
+        s2 = ""
+        for i in self.trucks:
+            s2 += str(i) + "\n"
+        return "passenger cars:\n" + s1 + "trucks:\n" + s2
+    def __add__(self):
+
+    def __sub__(self):
+        
+
 car1 = Truck("m",2000, 2013, 4000, "bobSmith")
 car1.add_good("wood", 200)
 car1.add_good("gold", 3)
