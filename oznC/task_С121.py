@@ -84,10 +84,16 @@ class Autopark:
         for i in self.trucks:
             s2 += str(i) + "\n"
         return "passenger cars:\n" + s1 + "trucks:\n" + s2
-    def __add__(self):
-
-    def __sub__(self):
-        
+    def __len__(self):
+        return len(self.trucks)
+    def __getitem__(self, key):
+        if key == 0:
+            return self.passengerCars
+        return self.trucks[key-1]
+    def __add__(self, other):
+        self.cars.append(other)
+    def __sub__(self, other):
+        self.cars.remove(other)
 
 car1 = Truck("m",2000, 2013, 4000, "bobSmith")
 car1.add_good("wood", 200)
