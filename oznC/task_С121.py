@@ -46,7 +46,11 @@ class PassengerCar(Car):
     def print_book(self):
         for i in sorted(self.repair_book, key = self.repair_book.get):
             print(i, " ", self.repair_book[i])
-        
+    def str_book(self):
+        s = "repair book:\n"
+        for i in sorted(self.repair_book, key = self.repair_book.get):
+            s += "  "+ i + " " + self.repair_book[i] + "\n"
+        return s
 
 class Truck(Car):
     def __init__(self, mark, voltage, year, capacity, driver_name):
@@ -71,6 +75,12 @@ class Truck(Car):
         for i in sorted(self.goods, key = self.goods.get, reverse = True):
             print(i, " ", self.goods[i])
 
+    def str_goods(self):
+        s = "goods:\n"
+        for i in sorted(self.goods, key = self.goods.get, reverse = True):
+            s += "  " + str(i) + " " + str(self.goods[i]) + "\n"
+        return s
+
 class Autopark:
     def __init__(self, name):
         self.name = name
@@ -79,28 +89,50 @@ class Autopark:
     def __str__(self):
         s1 = ""
         for i in self.passengerCars:
-            s1 += str(i) + "\n"
+            s1 += str(i) + "\n" + i.str_book()
         s2 = ""
         for i in self.trucks:
-            s2 += str(i) + "\n"
-        return "passenger cars:\n" + s1 + "trucks:\n" + s2
+            s2 += str(i) + "\n" + i.str_goods()
+        return self.name + ":\n\npassenger cars:\n" + s1 + "\ntrucks:\n" + s2
     def __len__(self):
         return len(self.trucks)
     def __getitem__(self, key):
         if key == 0:
             return self.passengerCars
         return self.trucks[key-1]
+    def __setitem__(self, key, value):
+        if key == 0:
+            self.passengerCars = value
+        self.trucks[key-1] = value
     def __add__(self, other):
-        self.cars.append(other)
+        if type(other) == Truck:
+            self.trucks.append(other)
+        elif type(other) == PassengerCar:
+            self.passengerCars.append(other)
     def __sub__(self, other):
-        self.cars.remove(other)
+        if type(other) == Truck:
+            self.trucks.remove(other)
+        elif type(other) == PassengerCar:
+            self.passengerCars.remove(other)
+    def create_txt(self):
+        self.txt = open("Autopark.txt","w+")
+        self.txt.write(str(self))
+        self.txt.close()
 
-car1 = Truck("m",2000, 2013, 4000, "bobSmith")
+car1 = Truck("WAZ",2000, 2013, 4000, "bobSmith")
 car1.add_good("wood", 200)
 car1.add_good("gold", 3)
 car1.add_good("rocks", 100)
-car1.print_goods()
-print(str(car1))
+car2 = Truck("KAMAZ",3000, 2013, 4000, "bobSmith")
+car2.add_good("rocks", 100)
+car3 = PassengerCar("honda", 600, 2005, 4)
+ap = Autopark("Autopark")
+ap+car1
+ap+car2
+ap+car1
+ap+car3
+ap.create_txt()
+
 
 
 
