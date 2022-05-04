@@ -10,11 +10,9 @@ goods:
   wood 200
   rocks 100
   gold 3
-mark: WAZ; voltage: 2000; year: 2013; capacity: 4000; driver: bobSmith
+mark: KAMAZ; voltage: 3000; year: 2013; capacity: 4000; driver: bobSmith
 goods:
-  wood 200
   rocks 100
-  gold 3
 mark: WAZ; voltage: 2000; year: 2013; capacity: 4000; driver: bobSmith
 goods:
   wood 200
