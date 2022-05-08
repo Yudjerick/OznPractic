@@ -1,20 +1,17 @@
-Autopark:
+MyAutopark:
 
 passenger cars:
-mark: honda; voltage: 600; year: 2005; passengers: 4
+mark: volvo; voltage: 500; year: 1999; passengers: 4
 repair book:
+  engine 2005
+  roof 2010
 
 trucks:
-mark: WAZ; voltage: 2000; year: 2013; capacity: 4000; driver: bobSmith
+mark: KAMAZ; voltage: 6000; year: 2007; capacity: 10000; driver: IvanIvanov
 goods:
+  iron 500
   wood 200
-  rocks 100
-  gold 3
-mark: KAMAZ; voltage: 3000; year: 2013; capacity: 4000; driver: bobSmith
+
+mark: WAZ; voltage: 4000; year: 2019; capacity: 6000; driver: bobSmith
 goods:
-  rocks 100
-mark: WAZ; voltage: 2000; year: 2013; capacity: 4000; driver: bobSmith
-goods:
-  wood 200
-  rocks 100
-  gold 3
+

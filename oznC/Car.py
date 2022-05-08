@@ -3,3 +3,6 @@ class Car:
         self.mark = mark
         self.voltage = voltage
         self.year = year
+
+def testCar():
+    car = Car("volvo", 700, 1999)

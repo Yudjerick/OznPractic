@@ -20,5 +20,18 @@ class PassengerCar(Car):
     def str_book(self):
         s = "repair book:\n"
         for i in sorted(self.repair_book, key = self.repair_book.get):
-            s += "  "+ i + " " + self.repair_book[i] + "\n"
+            s += "  "+ i + " " + str(self.repair_book[i]) + "\n"
         return s
+
+def testPassengerCar():
+    print("\nTesting PassengerCar:")
+    car = PassengerCar("volvo",500,1999,4)
+    print(car)
+    car.add_detail("engine", 2005)
+    print(car.get_changeyear("engine"))
+    car.add_detail("roof", 2010)
+    print("repairbook:")
+    car.print_book()
+    return car
+
+#testPassengerCar()
