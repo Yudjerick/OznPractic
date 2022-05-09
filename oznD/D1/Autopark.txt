@@ -1,0 +1,23 @@
+Autopark:
+
+passenger cars:
+mark: honda; voltage: 600; year: 2005; passengers: 4
+repair book:
+  engine 2010
+  wheel 2020
+
+trucks:
+mark: WAZ; voltage: 2000; year: 2013; capacity: 4000; driver: bobSmith
+goods:
+  wood 200
+  rocks 100
+  gold 3
+
+mark: KAMAZ; voltage: 3000; year: 2013; capacity: 4000; driver: bobSmith
+goods:
+  rocks 100
+
+mark: ZIL; voltage: 3000; year: 2012; capacity: 5000; driver: jeremyHatter
+goods:
+  planks 600
+
